@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Tangerine&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: rgb(223, 224, 225);
+        font-weight: 50;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+      }
+
+      .name {
+        font-size: 32px;
+      }
+
+      .links img {
+        margin-left: 15px;
+      }
+
+      .profile-image {
+        padding: 50px;
+      }
+
+      .profile-image img {
+        border-radius: 10px;
+      }
+
+      .self-introduction {
+        padding: 0 230px;
+        font-size: 70px;
+      }
+
+      .self-introduction p {
+        margin-bottom: 30px;
+      }
+
+      .information {
+        padding: 0 230px;
+      }
+
+      .section {
+        display: flex;
+        padding: 50px 0;
+      }
+
+      .section-header {
+        font-size: 20px;
+        min-width: 200px;
+        font-family: "Caveat", cursive;
+        font-style: italic;
+      }
+
+      .section-content {
+        font-size: 35px;
+        min-width: 650px;
+      }
+
+      .project-name {
+        font-family: "Tangerine", serif;
+        text-shadow: 4px 4px 4px #aaa;
+        margin: 0 15px;
+      }
+
+      .modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+      }
+
+      .project-header img {
+        margin: 0 15px;
+      }
+
+      .project-header a {
+        text-decoration: none;
+      }
+
+      .project-detail {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .project-demo {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      a:link {
+        color: black;
+      }
+
+      a:visited {
+        color: black;
+      }
+
+      a:hover {
+        color: green;
+      }
+
+      footer {
+        height: 500px;
+        background-color: rgb(56, 56, 56);
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-contact {
+        font-size: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      .footer-credit {
+        font-size: 6px;
+      }
+
+      .footer-credit a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="name">Shaoqin</div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/sfdz0309/" target="_blank">
+          <img
+            width="25"
+            height="25"
+            src="https://img.icons8.com/ios/50/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://github.com/fushaoqin-devops" target="_blank">
+          <img
+            width="25"
+            height="25"
+            src="https://img.icons8.com/fluency-systems-filled/48/github.png"
+            alt="github"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="profile-image">
+      <img
+        width="650"
+        height="auto"
+        src="https://lh3.googleusercontent.com/drive-viewer/AITFw-yUQKnTO_Av4N6ctzSUoKpQ1cAx4elmxmJ12IhJC0yRJci7xiX4Qrd1PvAyCBgH5h2pg8RO04556hJcqC9O8k2bnccEug=s1600"
+        alt="profile image"
+      />
+    </div>
+
+    <div class="self-introduction">
+      <p>
+        Shaoqin Fu is a recent Master's graduate looking for
+        <b><i>software developer</i></b> oppoortunities.
+      </p>
+      <p>
+        Acquired solid knowledge of <b><i>Spring Boot</i></b> and
+        <b><i>Spring cloud</i></b> microservices. Previously worked as a full
+        stack software developer during my Co-op.
+      </p>
+    </div>
+
+    <div class="information">
+      <div class="section">
+        <div class="section-header">About</div>
+        <span class="section-content">
+          I'm a from China and have been studying and living in the United
+          States for the past 10 years
+        </span>
+      </div>
+      <div class="section">
+        <div class="section-header">Experience</div>
+        <span class="section-content">
+          I have worked with technologies such as Angular, Express and AWS as a
+          full stack developer. I also built several projects with Spring MVC,
+          Spring Boot, and Spring Cloud
+        </span>
+      </div>
+      <div class="section">
+        <div class="section-header">Projects</div>
+        <span class="section-content">
+          <div class="project-header">
+            <div class="project-name">Ez Takeout</div>
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/carbon-copy/50/right.png"
+              alt="right"
+            />
+            <div class="project-demo project-detail" data-target="modal-1">
+              &#x2022;demo1
+            </div>
+            <div class="project-demo project-detail" data-target="modal-2">
+              &#x2022;demo2
+            </div>
+            <div class="project-github project-detail">
+              <bold>&#x2022;</bold
+              ><a
+                href="https://github.com/fushaoqin-devops/ez-takeout"
+                target="_blank"
+                >github</a
+              >
+            </div>
+          </div>
+          <div id="modal-1" class="modal-container">
+            <div class="model-content">
+              <span class="close">&times;</span>
+              <iframe
+                width="640"
+                height="506"
+                src="https://www.loom.com/embed/942a1dcbe4b7426383a2065f927519f3?sid=bd7be6cc-1f68-4e8e-a273-aa855a865a99"
+                frameborder="0"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div id="modal-2" class="modal-container">
+            <div class="model-content">
+              <span class="close">&times;</span>
+              <iframe
+                width="438"
+                height="720"
+                src="https://www.loom.com/embed/8a6eace42cff4c2abf7df582ff49b68e?sid=898c7cc9-de8b-4242-bc3f-0c4ff046b05f"
+                frameborder="0"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="project-header">
+            <div class="project-name">My Zone</div>
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/carbon-copy/50/right.png"
+              alt="right"
+            />
+            <div class="project-demo project-detail" data-target="modal-3">
+              &#x2022;demo
+            </div>
+          </div>
+          <div id="modal-3" class="modal-container">
+            <div class="model-content">
+              <span class="close">&times;</span>
+              <iframe
+                width="640"
+                height="543"
+                src="https://www.loom.com/embed/4c55bf4a17134fe4accf8dd15be971c0?sid=b3127b47-2b57-4768-b644-ee41a7dcd7c6"
+                frameborder="0"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="section">
+        <div class="section-header">Contact</div>
+        <span class="section-content">
+          Write me an email at
+          <a href="mailto:fushaoqin321@gmail.com">fushaoqin321@gmail.com</a> or
+          message me on
+          <a href="https://www.linkedin.com/in/sfdz0309/" target="_blank"
+            >LinkedIn</a
+          >. <br />
+          If all else fails, you can call me: <br />
+          +1 530 761 6527
+        </span>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-contact">Shaoqin Fu <br />fushaoqin321@gmail.com</div>
+      <div class="footer-credit">
+        all icons by <a href="https://icons8.com">Icons8</a>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const projectNames = document.querySelectorAll(".project-demo");
+
+    projectNames.forEach((projectName) => {
+      projectName.addEventListener("click", () => {
+        const targetModalId = projectName.getAttribute("data-target");
+        const modal = document.getElementById(targetModalId);
+        modal.style.display = "block";
+        const content = modal.children[0];
+        content.style.position = "absolute";
+        content.style.top = "50%";
+        content.style.left = "50%";
+        content.style.transform = "translate(-50%, -50%)";
+        const closeButton = modal.querySelector(".close");
+        closeButton.style.position = "absolute";
+        closeButton.style.top = "-5%";
+        closeButton.style.left = "100%";
+        closeButton.style.fontSize = "60px";
+        closeButton.style.color = "white";
+        closeButton.style.cursor = "pointer";
+        closeButton.addEventListener("click", () => {
+          const iframe = modal.querySelector("iframe");
+          const src = iframe.src;
+          iframe.src = "";
+          iframe.src = src;
+          modal.style.display = "none";
+        });
+      });
+    });
+  </script>
+</html>
